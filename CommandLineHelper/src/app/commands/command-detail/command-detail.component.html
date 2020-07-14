@@ -1,0 +1,41 @@
+<form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+    <input type="hidden" name="Id" [value]="service.formData.Id">
+
+    <div class="form-group">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text bg-white">
+                    <i class="fa fa-info" [class.green-icon]="HowTo.valid" [class.red-icon]="HowTo.invalid && HowTo.touched"></i>
+                </div>
+            </div>
+            <input name="HowTo" #HowTo="ngModel" [(ngModel)]="service.formData.HowTo" class="form-control" placeholder="How to" required>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text bg-white">
+                    <i class="fa fa-terminal" [class.green-icon]="Line.valid" [class.red-icon]="Line.invalid && Line.touched"></i>
+                </div>
+            </div>
+            <input name="Line" #Line="ngModel" [(ngModel)]="service.formData.Line" class="form-control" placeholder="Line" required>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text bg-white">
+                    <i class="fa fa-window-maximize" [class.green-icon]="Platform.valid" [class.red-icon]="Platform.invalid && Platform.touched"></i>
+                </div>
+            </div>
+            <input name="Platform" #Platform="ngModel" [(ngModel)]="service.formData.Platform" class="form-control" placeholder="Platform" required>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <button class="btn-succes btn-lg btn-block" type="submit" [disabled]="form.invalid"><i class="fas fa-database"></i> Submit</button>
+    </div>
+    
+</form>
