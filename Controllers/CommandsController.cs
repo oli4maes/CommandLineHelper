@@ -5,6 +5,7 @@ using CommandLineHelper.Data;
 using AutoMapper;
 using CommandLineHelper.Dtos;
 using Microsoft.AspNetCore.JsonPatch;
+using System.Threading.Tasks;
 
 namespace CommandLineHelper.Controllers
 {
@@ -21,11 +22,11 @@ namespace CommandLineHelper.Controllers
             _mapper = mapper;
         }
 
-        // GET api/commands
+        // async GET api/commands
         [HttpGet]
-        public ActionResult<IEnumerable<CommandReadDto>> GetAllCommands()
+        public async Task<ActionResult<IAsyncEnumerable<CommandReadDto>>> GetAllCommandsAsync()
         {
-            var commandItems = _repository.GetAllCommands();
+            var commandItems = await _repository.GetAllCommands();            
 
             return Ok(_mapper.Map<IEnumerable<CommandReadDto>>(commandItems));
         }

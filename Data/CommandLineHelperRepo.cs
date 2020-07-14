@@ -2,6 +2,8 @@ using CommandLineHelper.Models;
 using System.Linq;
 using System.Collections.Generic;
 using System;
+using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace CommandLineHelper.Data
 {
@@ -13,10 +15,10 @@ namespace CommandLineHelper.Data
         {
             _context = context;
         }
-        
-        public IEnumerable<Command> GetAllCommands() 
+
+        public async Task<IList<Command>> GetAllCommands() 
         {
-            return _context.Commands;  
+            return await _context.Commands.ToListAsync();  
         }
 
         public Command GetCommandById(int id)
