@@ -1,4 +1,6 @@
 # CommandLineHelper
+This app is can be used to save and remind you of your CLI commands.
+
 The backend is based on this tutorial by Les Jackson: https://www.youtube.com/watch?v=fmvcAzHpsk8 .
 The frontend is based on this tutorial: https://www.codaffection.com/asp-net-core-article/angular-crud-with-asp-net-core-web-api/ .
 
