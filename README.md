@@ -24,5 +24,5 @@ The API will run on `https://localhost:5001/api`.
 `https://localhost:5001/api/commands/{id}`
 
 ## Run the Angular application
-Open the Angular app folder `cd CommandLineHelper`
+Open the Angular app folder `cd CommandLineHelper`.
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
